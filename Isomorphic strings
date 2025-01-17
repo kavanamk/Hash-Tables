@@ -1,0 +1,21 @@
+def is_isomorphic(string1, string2):
+  
+  map1={}
+  for s1,s2 in zip(string1,string2):
+    if s1 not in map1:
+      map1[s1]=s2
+    elif map1[s1]!=s2:
+      return False
+  
+    map2={}
+    for s1,s2 in zip(string1,string2):
+      if s2 not in map2:
+        map2[s2]=s1
+      elif map2[s2]!=s1:
+        return False
+    
+  return True
+
+string1="badc"
+string2= "baba"
+print(is_isomorphic(string1, string2))
